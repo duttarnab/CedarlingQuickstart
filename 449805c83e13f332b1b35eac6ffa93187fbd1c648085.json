@@ -20,11 +20,15 @@
                 "ba49b559f93fc7c80b3729d47edd7c37d034803ac93c": {
                     "name": "testIdp",
                     "description": "testIdp",
-                    "openid_configuration_endpoint": "https://test-jans.gluu.info/.well-known/openid-configuration",
+                    "openid_configuration_endpoint": "https://admin-ui-test.gluu.org/.well-known/openid-configuration",
                     "token_metadata": {
                         "access_token": {
                             "trusted": true,
                             "entity_type_name": "Jans::Access_token",
+                            "user_id": "sub",
+                            "token_id": "jti",
+                            "workload_id": "rp_id",
+                            "claim_mapping": {},
                             "required_claims": [
                                 "jti",
                                 "iss",
@@ -33,20 +37,38 @@
                                 "exp",
                                 "nbf"
                             ],
+                            "role_mapping": "role",
                             "principal_mapping": [
                                 "Jans::Workload"
                             ]
                         },
                         "id_token": {
                             "trusted": true,
-                            "entity_type_name": "Jans::id_token"
+                            "entity_type_name": "Jans::id_token",
+                            "user_id": "sub",
+                            "token_id": "jti",
+                            "role_mapping": "role",
+                            "claim_mapping": {},
+                            "principal_mapping": [
+                                "Jans::User"
+                            ]
                         },
                         "userinfo_token": {
                             "trusted": true,
                             "entity_type_name": "Jans::Userinfo_token",
+                            "user_id": "sub",
+                            "token_id": "jti",
+                            "role_mapping": "role",
+                            "claim_mapping": {},
                             "principal_mapping": [
                                 "Jans::User"
                             ]
+                        },
+                        "tx_token": {
+                            "trusted": true,
+                            "entity_type_name": "Jans::Access_token",
+                            "user_id": "sub",
+                            "token_id": "jti"
                         }
                     }
                 }
